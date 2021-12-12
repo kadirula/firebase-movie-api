@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Website</title>
+</head>
+
+<body>
+    <h1>Movie Website</h1>
+
+    <script>
+        getMovies();
+
+        async function getMovies() {
+            const api_url_full = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=676e896f3bb979d4566a1fea83360997&page=2';
+
+
+            fetch(api_url_full).then(res => res.json()).then(data => {
+                console.log(data);
+            });
+        }
+    </script>
+
+
+</body>
+
+</html>
