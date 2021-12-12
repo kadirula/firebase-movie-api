@@ -16,7 +16,27 @@
 
 <body>
 
-    <section class="container movie"></section>
+    <nav class="navbar navbar-light bg-dark py-4">
+        <div class="container">
+            <a class="navbar-brand text-warning fw-bold">MOVIE</a>
+            <form class="d-flex w-50">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-warning" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+            <ul class="navbar-nav d-flex flex-row">
+                <li class="nav-item me-4">
+                    <a class="nav-link fw-bold text-white" href="#">Favorilerim</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold text-white" href="#">Giriş Yap</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="container movie mt-5"></section>
 
     <script src="assets/plugins/bootstrap-5.1.3/js/bootstrap.min.js"></script>
     <script src="assets/plugins/jquery/jquery-3.6.0.min.js"></script>

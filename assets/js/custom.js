@@ -1,23 +1,18 @@
 $(document).ready(function() {
-
-    getMoview();
-
-    // $('.movie').pagination({
-    //     dataSource: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    //     pageSize: 5,
-    //     pageRange: null,
-    //     showPageNumbers: true,
-    //     callback: function(data, pagination) {
-    //         var html = template(data);
-    //         dataContainer.append(html);
-    //     }
-    // })
-
-
+    getMovie('popularity.desc');
 });
 
-function getMoview() {
-    const api_url = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=676e896f3bb979d4566a1fea83360997&page=1';
+function getMovie(sort) {
+
+    const base_url = 'https://api.themoviedb.org/3/discover/movie';
+    const sort_by = '?sort_by=' + sort;
+    const api_key = '&api_key=676e896f3bb979d4566a1fea83360997';
+    const page = '&page=' + 1;
+
+    const api_url = base_url + sort_by + api_key + page;
+
+    // output
+    // https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=676e896f3bb979d4566a1fea83360997&page=1;
 
     fetch(api_url).then(res => res.json()).then(data => {
         showMoview(data.results);
@@ -26,8 +21,8 @@ function getMoview() {
 
 function showMoview(data) {
 
-    console.log(data);
     data.forEach(movie => {
+
         const { title, poster_path, vote_average, overview, release_date } = movie;
 
         const movieItem = `
@@ -39,13 +34,13 @@ function showMoview(data) {
                     <div class="movie__date">${release_date}</div>
                 </div>
                 <div class="movie__description my-4">
-                    ${overview.substring(0,65)}
+                    ${overview.substring(0,65) + "..."}
                 </div>
                 <div class="d-flex justify-content-between">
-                    <a href="javascript:;" class="movie__btn movie__hover-btn">
+                    <a href="javascript:;" class="btn btn-outline-warning">
                         Read More
                     </a>
-                    <div class="movie__btn">
+                    <div class="btn btn-outline-warning">
                         <i class="far fa-star"></i>
                     </div>
                 </div>
