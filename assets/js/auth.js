@@ -13,20 +13,24 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth();
+
+
 $(document).ready(function() {
+
+    // Kayıt Olma Fonksiyonu
     $('#register-btn').click(function() {
         const email = $('#email').val();
         const password = $('#password').val();
         createUserWithEmailAndPassword(auth, email, password)
-            .then((result) => {
-                // console.log(result.user);
-                window.location.href = "index.html";
+            .then(() => {
+                window.location.href = "login.html";
             }).catch((err) => {
                 alert(err.message);
             });
     });
 
 
+    // Giriş Yapma Fonksiyonu
     $('#sign-in').click(function() {
 
         const email = $('#email').val();
@@ -40,10 +44,8 @@ $(document).ready(function() {
     });
 
 
+    // Çıkış Yapma Fonksiyonu
     $('#sign-out').click(function() {
-
-
-
         signOut(auth).then(() => {
             window.location.href = "index.html";
         }).catch(err => {
