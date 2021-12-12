@@ -168,9 +168,8 @@ body {
 .logo {
     font-size: 30px;
     font-weight: 700;
-    /* text-align: center; */
     text-decoration: none;
-    display: block;
+    display: inline-block;
     position: relative;
     top: 45px;
     left: 45px;

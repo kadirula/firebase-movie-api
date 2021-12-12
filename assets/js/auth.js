@@ -12,6 +12,8 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+
+
 const auth = getAuth();
 
 
@@ -37,7 +39,22 @@ $(document).ready(function() {
         const password = $('#password').val();
 
         signInWithEmailAndPassword(auth, email, password).then(() => {
-            window.location.href = "index.html";
+            onAuthStateChanged(auth, (user) => {
+                localStorage.setItem("user", user.email);
+            });
+
+            iziToast.success({
+                title: 'Giriş Başarılı. Sayfaya Yönlendiriliyorsunuz.',
+                position: 'topRight',
+                titleSize: '20',
+                backgroundColor: 'green',
+            });
+
+            setTimeout(function() {
+                window.location.href = "index.html";
+            }, 2000);
+
+
         }).catch(err => {
             alert(err.message);
         });
@@ -47,6 +64,7 @@ $(document).ready(function() {
     // Çıkış Yapma Fonksiyonu
     $('#sign-out').click(function() {
         signOut(auth).then(() => {
+            localStorage.removeItem("user");
             window.location.href = "index.html";
         }).catch(err => {
             alert(err.message);

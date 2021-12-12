@@ -1,5 +1,28 @@
 $(document).ready(function() {
     getMovie('popularity.desc');
+
+    console.log(localStorage.getItem("user"));
+
+
+    var user = getLocalStorage("user");
+
+    let navItem = '';
+    if (user != null) {
+        navItem = `
+            <a href="javascript:;" class="nav-link fw-bold text-white" id="sign-out">            
+                Çıkış Yap
+            </a>
+        `;
+    } else {
+        navItem = `
+            <a class="nav-link fw-bold text-white" href="login.html">            
+                Giriş Yap
+            </a>
+        `;
+    }
+
+    $('.auth-li').html(navItem);
+
 });
 
 function getMovie(sort) {
@@ -54,4 +77,8 @@ function showMoview(data) {
         $('.movie').append(movieItem);
 
     });
+}
+
+function getLocalStorage(key) {
+    return localStorage.getItem(key);
 }
