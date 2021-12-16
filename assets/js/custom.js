@@ -39,6 +39,8 @@ function getMovie(sort) {
 
     fetch(api_url).then(res => res.json()).then(data => {
         showMoview(data.results);
+
+        console.log(data.results);
     });
 }
 
