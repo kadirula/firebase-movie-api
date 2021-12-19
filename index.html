@@ -2,70 +2,71 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Website</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Website</title>
 
-    <link rel="stylesheet" href="assets/plugins/font-awesome/css/all.min.css">
-    <link rel="stylesheet" href="assets/plugins/bootstrap-5.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/plugins/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="assets/plugins/bootstrap-5.1.3/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
+    integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
 <body>
 
-    <nav class="navbar navbar-light bg-dark py-4">
-        <div class="container">
-            <a href="index.html" class="navbar-brand text-warning fw-bold">MOVIE</a>
-            <form class="d-flex w-50">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search">
-                <button class="btn btn-outline-warning" type="submit">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form>
-            <ul class="navbar-nav d-flex flex-row">
-                <li class="nav-item me-4">
-                    <a class="nav-link fw-bold text-white" href="#">Favorilerim</a>
-                </li>
-                <li class="nav-item auth-li">
+  <nav class="navbar navbar-light bg-dark py-4">
+    <div class="container">
+      <a href="index.html" class="navbar-brand text-warning fw-bold">MOVIE</a>
+      <form class="d-flex w-50">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search">
+      </form>
+      <ul class="navbar-nav d-flex flex-row">
+        <li class="nav-item me-4">
+          <a class="nav-link fw-bold text-white" href="#">Favorilerim</a>
+        </li>
+        <li class="nav-item auth-li">
+          <a class="nav-link fw-bold text-white" href="login.html">
+            Giriş Yap
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-                </li>
-            </ul>
+  <section class="container movie mt-5"></section>
+
+  <div class="modal" id="movie-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-    </nav>
-
-    <section class="container movie mt-5"></section>
-
-    <div class="modal" id="movie-modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <p>Modal body text goes here.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary">Save changes</button>
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-          </div>
+        <div class="modal-body">
+          <p>Modal body text goes here.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
+    </div>
+  </div>
 
-    <script src="assets/plugins/bootstrap-5.1.3/js/bootstrap.min.js"></script>
-    <script src="assets/plugins/jquery/jquery-3.6.0.min.js"></script>
-    <script src="assets/plugins/jquery-ui/jquery-ui.js"></script>
-    <script src="assets/plugins/izitoast/iziToast.min.js"></script>
-    <script type="module" src="assets/js/auth.js"></script>
-    <script src="assets/js/custom.js"></script>
+  <script src="assets/plugins/bootstrap-5.1.3/js/bootstrap.min.js"></script>
+  <script src="assets/plugins/jquery/jquery-3.6.0.min.js"></script>
+  <script src="assets/plugins/jquery-ui/jquery-ui.js"></script>
+  <script src="assets/plugins/izitoast/iziToast.min.js"></script>
+  <script type="module" src="assets/js/auth.js"></script>
+  <script src="assets/js/custom.js"></script>
 
 </body>
 
