@@ -40,7 +40,7 @@ $(document).ready(function() {
 
         signInWithEmailAndPassword(auth, email, password).then(() => {
             onAuthStateChanged(auth, (user) => {
-                localStorage.setItem("user", user.email);
+                localStorage.setItem("user", JSON.stringify(user.email));
             });
 
             iziToast.success({
@@ -75,6 +75,6 @@ $(document).ready(function() {
 
     // giriş yapan kullanıcı bilgilerini yakalıyoruz. 
     onAuthStateChanged(auth, (user) => {
-        console.log(user);
+        // console.log(user);
     });
 });
