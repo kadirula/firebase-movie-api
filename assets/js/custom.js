@@ -1,9 +1,12 @@
 $(document).ready(function () {
 
+    // filmleri listeler
     getMovie('popularity.desc');
 
+    // kullanıcı giriş çıkışına göre header da text değişikliği yapıyor
     getHeaderUserStatusElement(getLocalStorage("user"));
 
+    // jquery autocomplete ile arama yapıyor
     $('#search').on('input', function () {
         var data = getLocalStorage("movie-data");
         var searchValue = $(this).val();
@@ -16,6 +19,7 @@ $(document).ready(function () {
         }
         else {
             data.forEach(obj => renameKey(obj, 'title', 'value'));
+            
             $(this).autocomplete({
                 source: data,
                 select: function (event, ui) {
@@ -29,10 +33,6 @@ $(document).ready(function () {
                 }
             });
         }
-    });
-
-    $('.movie__title').click(function(){
-        alert("asd");
     });
 });
 
